@@ -36,13 +36,13 @@ export default function Home() {
 
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
+     <Head>
         <title>AluraQuiz - Modelo Base</title>
       </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
-          <Widget.Header>
+        <Widget.Header>
             <h1>The legend of zelda</h1>
           </Widget.Header>
           <Widget.Content>
