@@ -10,6 +10,9 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import QuizContainer from '../src/components/QuizContainer';
 
 /*const BackgroundImage = styled.div`
 background-image: url(${db.bg})
@@ -19,16 +22,7 @@ background-position: center;
 `;*/
 
 
-export const QuizContainer = styled.div`
-width: 100%;
-max-width: 350px;
-padding-top: 45px;
-margin: auto 10%;
-@media screen and (max-width: 500px) {
-  margin: auto;
-  padding: 15px;
-}
-`;
+
 
 export default function Home() {
   const router = useRouter();
@@ -52,19 +46,15 @@ export default function Home() {
               console.log('Fazendo uma submissão por meio do react');
             }}
             >
-              <input
-                onChange={function (infosDoEvento) {
-                  console.log(infosDoEvento.target.value);
-                  // State
-                  // name = infosDoEvento.target.value;
-                  setName(infosDoEvento.target.value);
-                }}
+              <Input
+                name="nomeDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
                 placeholder="Diz ai seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
-              </button>
+              <Button type="submit" disabled={name.length === 0}>
+               {`Jogar ${name}`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
@@ -78,7 +68,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/PabloDemuner" />
+      <GitHubCorner projectUrl="https://github.com/PabloDemuner"/>
     </QuizBackground>
   );
 }
