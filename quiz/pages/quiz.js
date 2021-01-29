@@ -5,9 +5,10 @@ import Widget from '../src/components/Widget';
 import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
+import AlternativesForm from '../src/components/AlternativesForm';
 import Button from '../src/components/Button';
 
-function ResultWidget({result}) {
+function ResultWidget({results}) {
   return (
     <Widget>
       <Widget.Header>
@@ -29,8 +30,8 @@ function ResultWidget({result}) {
           {` `}
           perguntas </p>
         <ul>
-          {results.map((result) => (
-          <li>
+          {results.map((result, index) => (
+          <li key={`result__${result}`}>
             #
             {index + 1}
             {` `}
@@ -97,7 +98,7 @@ function QuestionWidget({
           {question.description}
         </p>
 
-        <form
+        <AlternativesForm
           onSubmit={(infosDoEvento) => {
             infosDoEvento.preventDefault();
             setIsQuestionSubmited(true);
@@ -112,14 +113,19 @@ function QuestionWidget({
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? `SUCCESS` : `ERROR`;
+            const isSelected = selectedAlternative === alternativeIndex;
             return (
               <Widget.Topic
                 as="label"
                 key={alternativeId}
                 htmlFor={alternativeId}
+                data-selected={isSelected}
+                data-status={isQuestionSubmited && alternativeStatus}
               >
                 <input
-                  // style={{ display: 'none' }}
+                //Esconde o input
+                  style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
                   onChange={() => setSelectedAlternative(alternativeIndex)}
@@ -138,7 +144,7 @@ function QuestionWidget({
           </Button>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
-        </form>
+        </AlternativesForm>
       </Widget.Content>
     </Widget>
   );
@@ -157,8 +163,8 @@ export default function QuizPage() {
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
 
-  function addResults(results){
-    setResults([...results, result,]);
+  function addResults(result){
+    setResults([...results, result]);
   }
 
   // [React chama de: Efeitos || Effects]
@@ -195,7 +201,7 @@ export default function QuizPage() {
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
             onSubmit={handleSubmitQuiz}
-            addResult={addResult}
+            addResult={addResults}
           />
         )}
 
