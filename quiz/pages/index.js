@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+//Import retirado da framework https://www.framer.com/motion/
+import { motion } from 'framer-motion';
 
 
 import db from '../db.json';
@@ -36,7 +38,20 @@ export default function Home() {
       </Head>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget
+        //Animações retirada da framework https://www.framer.com/motion/
+        as={motion.section}
+        //Tempo aproximado para começar a acontecer o efeito
+        transition={{ display: 0.1, duration: 0.1}}
+        //Estados de animação - Y é o eixo vertical
+        variants={{ 
+          show: {opacity: 1, y: `0`},
+          hidden: {opacity: 0, y: `90%`},
+        }}
+        //Valor Inicial que é o valor que começa o estado (hidden:0)
+        initial= "hidden"
+        animate= "show"
+        >
         <Widget.Header>
             <h1>The legend of zelda</h1>
           </Widget.Header>
@@ -60,7 +75,20 @@ export default function Home() {
           </Widget.Content>
         </Widget>
 
-        <Widget>
+        <Widget
+           //Animações retirada da framework https://www.framer.com/motion/
+           as={motion.section}
+           //Tempo aproximado para começar a acontecer o efeito
+           transition={{ display: 0.5, duration: 0.5}}
+           //Estados de animação 
+           variants={{ 
+             show: {opacity: 1},
+             hidden: {opacity: 0},
+           }}
+           //Valor Inicial que é o valor que começa o estado (hidden:0)
+           initial= "hidden"
+           animate= "show"
+        >
           <Widget.Content>
             <h1>Quizes da Galera</h1>
 
@@ -86,7 +114,20 @@ export default function Home() {
             </ul>
           </Widget.Content>
         </Widget>
-        <Footer />
+        <Footer 
+         //Animações retirada da framework https://www.framer.com/motion/
+         as={motion.footer}
+         //Tempo aproximado para começar a acontecer o efeito
+         transition={{ display: 0.5, duration: 0.5}}
+         //Estados de animação 
+         variants={{ 
+           show: {opacity: 1},
+           hidden: {opacity: 0},
+         }}
+         //Valor Inicial que é o valor que começa o estado (hidden:0)
+         initial= "hidden"
+         animate= "show"
+        />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/PabloDemuner"/>
     </QuizBackground>
