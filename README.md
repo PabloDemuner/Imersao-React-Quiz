@@ -20,8 +20,12 @@ A aplicação consiste em um pequeno Quiz de perguntinhas sobre Java Script e Re
 
 ## Front End 
 
+- Styled Component
+- Lottie React Web
+- React Icons
+- Vercel
 - JavaScript
-- React
+- React.JS
 - Next.JS
 
 ## Implantação em produção
