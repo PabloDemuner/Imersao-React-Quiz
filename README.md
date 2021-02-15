@@ -26,7 +26,7 @@ A aplicação consiste em um pequeno Quiz de perguntinhas sobre Java Script e Re
 
 ## Implantação em produção
 
--Front End Web: Vercel
+- Front End Web: Vercel
 
 ## Como Executar o projeto
 
