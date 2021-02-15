@@ -12,7 +12,7 @@ A aplicação consiste em um pequeno Quiz de perguntinhas sobre Java Script e Re
 
 ![WEB 1](https://github.com/PabloDemuner/Imersao-React-Quiz/blob/main/indexQuiz.png)
 
-#Tecnoligias utilizadas
+# Tecnoligias utilizadas
 
 ## Back End
 
