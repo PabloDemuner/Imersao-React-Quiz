@@ -5,7 +5,7 @@
 
 https://imersao-react-quiz-two.vercel.app
 
-Este projeto Quiz é um projeto criado com o plano de aperfeiçoar meus conhecimentos em Java Script e juntamente com estudos nas Frameworks React e Next JS.
+Este projeto Quiz é um projeto criado com o plano de aperfeiçoar meus conhecimentos em JavaScript e juntamente com estudos nas Frameworks React e Next.JS.
 A aplicação consiste em um pequeno Quiz de perguntinhas sobre Java Script e React.
 
 ## Layout Web
@@ -16,11 +16,11 @@ A aplicação consiste em um pequeno Quiz de perguntinhas sobre Java Script e Re
 
 ## Back End
 
-- Java Script
+- JavaScript
 
 ## Front End 
 
-- Java Script
+- JavaScript
 - React
 - Next.JS
 
