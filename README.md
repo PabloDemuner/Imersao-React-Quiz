@@ -1,5 +1,5 @@
 # Imersao-React-Quiz
-[![NPM](https://img.shields.io/apm/l/Imersao-React-Quiz)](https://github.com/PabloDemuner/Imersao-React-Quiz/blob/main/LICENSE)
+[![NPM](https://img.shields.io/github/issues/PabloDemuner/Imersao-React-Quiz)](https://github.com/PabloDemuner/Imersao-React-Quiz/blob/main/LICENSE)
 
 # Sobre o projeto
 
