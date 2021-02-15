@@ -14,11 +14,11 @@ A aplicação consiste em um pequeno Quiz de perguntinhas sobre Java Script e Re
 
 #Tecnoligias utilizadas
 
-##Back End
+## Back End
 
 - Java Script
 
-##Front End 
+## Front End 
 
 - Java Script
 - React
