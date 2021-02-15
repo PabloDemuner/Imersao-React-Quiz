@@ -11,7 +11,8 @@ import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import QuizLogo from '../src/components/QuizLogo';
+//<QuizLogo /> pode ser adicionado uma logomarca, colocar logo a cima do (<Widget) linha 40
+//import QuizLogo from '../src/components/QuizLogo';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer';
@@ -37,9 +38,10 @@ export default function Home() {
         <title>AluraQuiz - Modelo Base</title>
       </Head>
       <QuizContainer>
-        <QuizLogo />
+        
         <Widget
-        //Animações retirada da framework https://www.framer.com/motion/
+        //Animações retirada da framework https://www.framer.com/motion/ 
+        //<QuizLogo /> pode ser adicionado uma logomarca, colocar logo a cima do (<Widget) linha 40
         as={motion.section}
         //Tempo aproximado para começar a acontecer o efeito
         transition={{ display: 0.1, duration: 0.1}}
@@ -53,7 +55,7 @@ export default function Home() {
         animate= "show"
         >
         <Widget.Header>
-            <h1>The legend of zelda</h1>
+            <h1>Perguntas sobre JS, vai encarar ?</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={function (infosDoEvento) {
@@ -90,7 +92,7 @@ export default function Home() {
            animate= "show"
         >
           <Widget.Content>
-            <h1>Quizes da Galera</h1>
+            <h1>Quizes da Galera !</h1>
 
             <ul>
               {db.external.map((linkExterno) =>{
